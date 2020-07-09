@@ -3,20 +3,18 @@
 $table=[];
 if (isset($_GET['table'])) {
   $table = $_GET['table'];
-  $table_lenght = count($table);
-var_dump($table);
+}else {
+  $table[0] = 3;
 }
+$table_lenght = count($table);
  $_SESSION['table'] = $table;
  ?>
-
-
-
 
 <div class="row mt-5">
   <div class="col-lg-3 d-flex justify-content-center">
 
     <form method="get"action="apprendre.php">
-      <h3>Choisissez votre table :</h3>
+      <h3 class="mb-3">Choisissez votre table :</h3>
 
 <?php
 for ($i = 1; $i <= 10; $i++)
@@ -35,10 +33,8 @@ for ($i = 1; $i <= 10; $i++)
   <div class="col-lg-9">
     <div class="row">
       <?php
-      foreach ($table as $tablevaleur)
-      for ($i = 1; $i <= $table_lenght; $i++)
-      {?>
-      <div class="col-lg-3">
+      foreach ($table as $tablevaleur){?>
+      <div class="col-lg-2">
         <table class="table table-bordered">
           <thead>
             <tr>
