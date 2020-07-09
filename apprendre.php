@@ -1,31 +1,63 @@
-<?php include"header.php" ?>
+<?php include"header.php";
 
-<?php
-
-if(isset($_GET['table-select'])){
-  $table = $_GET['table-select'];
-
+$table=[];
+if (isset($_GET['table'])) {
+  $table = $_GET['table'];
+  $table_lenght = count($table);
+var_dump($table);
 }
-var_dump ($_GET['table-select']);
+ $_SESSION['table'] = $table;
  ?>
 
-<form method="get"action="apprendre.php">
 
-  <label for="table-select">Choisissez une table :</label>
-   <select name="table" id="table-select">
-    <option value="1">Table 1</option>
-    <option value="2">Table 2</option>
-    <option value="3" selected="selected">Table 3</option>
-    <option value="4">Table 4</option>
-    <option value="5">Table 5</option>
-    <option value="6">Table 6</option>
-    <option value="7">Table 7</option>
-    <option value="8">Table 8</option>
-    <option value="9">Table 9</option>
-    <option value="10">Table 10</option>
-  </select>
-  <input type="submit" name="" class="btn btn-info" value="envoyer">
 
-</form>
 
+<div class="row mt-5">
+  <div class="col-lg-3 d-flex justify-content-center">
+
+    <form method="get"action="apprendre.php">
+      <h3>Choisissez votre table :</h3>
+
+<?php
+for ($i = 1; $i <= 10; $i++)
+{?>
+  <input type="checkbox" id="table" name="table[]" value="<?= $i?>" >
+    <label for="table">Table de <?= $i?></label><br>
+
+<?php
+}
+?>
+
+      <input type="submit" name="" class="btn btn-info" value="envoyer">
+
+    </form>
+  </div>
+  <div class="col-lg-9">
+    <div class="row">
+      <?php
+      foreach ($table as $tablevaleur)
+      for ($i = 1; $i <= $table_lenght; $i++)
+      {?>
+      <div class="col-lg-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Table de <?= $tablevaleur ?></th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php for($j = 1; $j <= 10; $j++){
+              echo "<tr><th scope='row'>" . $j . " x " . $tablevaleur ."</th><td>".$j * $tablevaleur . "</td></tr>";
+            }?>
+          </tbody>
+        </table>
+        <div class="d-flex flex-column align-items-center justify-content-center">
+          <p>Réviser la table <?= $tablevaleur ?><p>
+          <input type='submit' name='' class='btn btn-info mb-5' value='reviser'>
+        </div>
+        </div>
+      <?php
+      }?>
+    </div>
+</div>
 <?php include"footer.php" ?>
