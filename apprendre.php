@@ -7,26 +7,27 @@ if (isset($_GET['table'])) {
   $table[0] = 3;
 }
 $table_lenght = count($table);
- $_SESSION['table'] = $table;
+$_SESSION['table'] = $table;
  ?>
 
 <div class="row mt-5">
   <div class="col-lg-3 d-flex justify-content-center">
 
     <form method="get"action="apprendre.php">
-      <h3 class="mb-3">Choisissez votre table :</h3>
+      <h3 class="mb-5">Choisissez votre table :</h3>
 
 <?php
 for ($i = 1; $i <= 10; $i++)
 {?>
-  <input type="checkbox" id="table" name="table[]" value="<?= $i?>" >
-    <label for="table">Table de <?= $i?></label><br>
+  <input type="checkbox" id="<?= $i?>" name="table[]" value="<?= $i?>">
+  <label for="<?= $i?>">Table de <?= $i?></label><br>
 
 <?php
 }
 ?>
 
-      <input type="submit" name="" class="btn btn-info" value="envoyer">
+      <input type="submit" name="" class="btn btn-info mr-4 mt-5" value="Apprendre">
+      <input type='submit' name='' class='btn btn-info mt-5' value='Réviser' onclick="javascript:window.open('revision.php');">
 
     </form>
   </div>
@@ -47,10 +48,6 @@ for ($i = 1; $i <= 10; $i++)
             }?>
           </tbody>
         </table>
-        <div class="d-flex flex-column align-items-center justify-content-center">
-          <p>Réviser la table <?= $tablevaleur ?><p>
-          <input type='submit' name='' class='btn btn-info mb-5' value='reviser'>
-        </div>
         </div>
       <?php
       }?>

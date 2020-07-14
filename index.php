@@ -6,9 +6,6 @@
     <p class="lead">Apprendre les tables de multiplication ! :D</p>
     <a href="apprendre.php"<button type="button" class="btn btn-info">Apprendre</button></a>
     <button type="button" class="btn btn-info">Réviser</button>
-
-
-
   </div>
 </div>
 
