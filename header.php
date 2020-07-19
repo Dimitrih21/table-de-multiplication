@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <title></title>
+    <style media="screen">
+    </style>
   </head>
   <body>
 
@@ -23,10 +25,10 @@
             <a class="nav-link" href="index.php">Accueil <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="apprendre.php">Module apprentissage</a>
+            <a class="nav-link" href="learn.php">Module apprentissage</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="revision.php">Module révision</a>
+            <a class="nav-link" href="revise.php">Module révision</a>
           </li>
         </ul>
       </div>
