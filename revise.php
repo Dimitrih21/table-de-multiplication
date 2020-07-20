@@ -69,7 +69,7 @@ $_SESSION['score'] = $score;
                 array_push($intsRandRevision, $random_int);
 
               }
-              $_SESSION['tablesRandomRevision'] = $tablesRandRevision;
+              $_SESSION['tablesRandRevision'] = $tablesRandRevision;
               $_SESSION['intsRandRevision'] = $intsRandRevision;
 
 

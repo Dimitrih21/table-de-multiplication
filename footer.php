@@ -21,14 +21,6 @@ $(function() {
           $('.score-after-verif').text(data.score);
           $('.message-score').text(data.message);
           $('.score-after-verif').show();
-          $.each(data.results, function(cle, valeur){
-            $(".results").text(valeur);
-            if(valeur == "true"){
-              $(".results").addClass("alert alert-success");
-            }else{
-              $(".results").addClass("alert alert-danger");
-            }
-           });
         }
       },
       error: function(data){

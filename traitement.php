@@ -14,21 +14,22 @@ if(isset($_POST['learn'])){
   $_SESSION['table'] = $table;
   header('Location: revise.php');
 }
-$result=[];
+
 $score = $_SESSION['score'];
 
 if(isset($_POST['responses'])){
   $responses = $_POST['responses'];
+  $results=[];
   $tablesResponseRevision = $_SESSION['tablesRandRevision'];
   $intsResponseRevision = $_SESSION['intsRandRevision'];
   $responses_lenght = count($responses);
   for($i=0; $i < $responses_lenght; $i++){
-    if(($tablesResponseRevision[$i] * $intsResponseRevision[$i]) == $responses[$i]){
-      $result[] = 'true';
+    if(($tablesResponseRevision[$i] * $intsResponseRevision[$i]) != $responses[$i]){
+      $score--;
+      $results[] = 'false';
     }
     else{
-      $score--;
-      $result[] = 'false';
+      $results[] = 'true';
     }
   }
 
@@ -39,7 +40,7 @@ if(isset($_POST['responses'])){
   }
 
 
-  $data['results'] = $result;
+  $data['results'] = $results;
   $data['response'] = "success";
   $data['score'] = $score;
 
